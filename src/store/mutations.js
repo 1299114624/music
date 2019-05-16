@@ -3,6 +3,7 @@ import * as types from './mutation-types'
 const mutations = {
     [types.storeUserInfo] (state, userInfo) {
         state.userInfo = userInfo
+        localStorage.setItem('userInfo', JSON.stringify(userInfo))
     },
     [types.SET_REQUEST_END] (state, isEnd) {
         state.requestEnd = isEnd
