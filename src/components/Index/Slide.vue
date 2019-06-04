@@ -1,7 +1,7 @@
 <template>
   <div class="slide" ref="slide">
       <div class="slide-group" ref="slideGroup">
-            <div v-for="(item,index) in picArray" v-bind:key="index" class="slider-item"><img :src="item.picUrl"/></div>
+            <div v-for="(item,index) in picArray" v-bind:key="index" class="slider-item"><img :src="item.imageUrl"/></div>
       </div>
   </div>
 </template>
@@ -30,13 +30,14 @@ export default {
     width: 90%;
     overflow: hidden;
     margin: 0 auto;
-    height: 10.5rem;
+    // height: 10.5rem;
+    height: 138px;
     position: relative;
     .slide-group {
         overflow: hidden;
         white-space: nowrap;
         .slider-item {
-            width: 154vw;
+            // width: 154vw;
             float: left;
             img {
                 display: block;

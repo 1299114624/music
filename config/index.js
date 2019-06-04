@@ -12,7 +12,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       "/api": {
-        target: "http://u-to-world.com:3000",
+        // target: "http://u-to-world.com:3000",
+        target: "http://yeshuoqiang.cn:3306",
         changeOrigin: true,  //是否跨域
         pathRewrite: {"^/api" : ""} //后面可以使重写的新路径，一般不做更改
       }

@@ -101,6 +101,7 @@ export default {
             }
             if (banner.data.code === 200) {
                 this.picArray = banner.data.banners;
+                console.log(this.picArray)
             }
             if (personalized.data.code === 200) {
                 this.contentArray = personalized.data.result.slice(0, 6); //土鳖法，截取前6
