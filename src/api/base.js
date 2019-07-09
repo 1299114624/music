@@ -6,7 +6,7 @@ import {SET_REQUEST_END} from '@/store/mutation-types'
 
 class Api {
     axios () {
-        axios.defaults.baseURL = process.env === 'development' ? '/api' : ':3306'
+        axios.defaults.baseURL = process.env === 'development' ? '/api' : 'http://yeshuoqiang.cn:3306'
         axios.defaults.withCredentials = true
         axios.interceptors.request.use(function (config) {
             // 在发送请求之前做些什么
