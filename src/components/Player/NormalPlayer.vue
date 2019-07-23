@@ -67,7 +67,8 @@ export default {
       };
     },
     backgroundUrl() {
-      return this.currentSong.album.blurPicUrl || "../static/img/no-pic.png";
+      return (this.currentSong.al && this.currentSong.al.picUrl) || "../static/img/no-pic.png";
+      // return "../static/img/no-pic.png";
     },
     sttime() { 
       return this.format(this.currentTime);
@@ -77,12 +78,9 @@ export default {
     },
     playTime() {
       let music =
-        this.currentSong.hMusic ||
-        this.currentSong.bMusic ||
-        this.currentSong.lMusic ||
-        this.currentSong.mMusic;
+        this.currentSong.al
       if (music) {
-        return music.playTime;
+        return this.currentSong.dt;
       } else {
         return 1;
       }
@@ -103,7 +101,7 @@ export default {
     barOnChange(finalRatio) {
         // 拖动小球=>改变音乐播放
       this.$parent.$refs.miniPlayer.$refs.audio.currentTime =
-        this.playTime / 1000 * finalRatio;
+      this.playTime / 1000 * finalRatio;
     },
     format(totalSecond) {
     //赋值操作居然能自动取整!!!  总秒数小数点后面的自己没了

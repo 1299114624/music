@@ -41,7 +41,7 @@
 <script>
 import BScroll from "better-scroll";
 import scrollMixin from "@/mixin/scrollMixin"
-import { getSheetDetail } from "api/api_songsheet.js";
+import { getSheetDetail } from "@/api/api_songsheet.js";
 import { mapMutations, mapActions } from "vuex";
 import List from "base/List";
 export default {
@@ -72,7 +72,6 @@ export default {
     },
     async getDetail(id) {
       let data = await getSheetDetail(id);
-      console.log("getSheetDetail", data);
       let info = {
         coverImgUrl: data.coverImgUrl,
         name: data.name,
@@ -88,7 +87,7 @@ export default {
       };
       this.info = info;
       data.tracks.forEach(element => {
-        element.singer = element.artists.map(t => t.name).join("/"); //歌手
+        element.singer = element.ar.map(t => t.name).join("/"); //歌手
       });
       this.songList = data.tracks;
     },

@@ -60,7 +60,8 @@ export default {
   computed: {
     backgroundUrl() {
       return this.songList.length > 0
-        ? this.songList[0].album.blurPicUrl
+        // ? this.songList[0].album.blurPicUrl
+        ? this.songList[0].al.picUrl
         : "../static/img/no-pic.png";
     },
     info() {
